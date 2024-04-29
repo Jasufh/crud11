@@ -56,7 +56,7 @@
                             <label for="img">Image</label>
                             <input type="file" name="img" id="img" accept="image/*">
 
-                                <img src="{{ $product->img }}" alt="">
+                                <img class="w-20" src="{{ $product->img }}" alt="">
                 
                             @error('img')
                                 <p class="text-sm text-red-600">{{ $message }}</p>

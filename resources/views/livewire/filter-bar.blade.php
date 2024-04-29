@@ -3,13 +3,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <div class="flex flex-row-reverse justify-between items-center mb-10">
-                        {{-- Button agregar --}}
-                        <div>
-                            <a type="submit" href="{{ route('product.create') }}"
-                                class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Agregar
-                                Producto</a>
-                        </div>
+                    <div class="flex flex-wrap justify-between items-center mb-10">
 
                         <div class="flex items-center">
                             {{-- Category --}}
@@ -44,6 +38,14 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        {{-- Button agregar --}}
+                        <div class="mt-2">
+                            <a type="submit" href="{{ route('product.create') }}"
+                                class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-3 py-2.5 text-center me-2 mb-2">Agregar
+                                Producto</a>
+                        </div>
+
                     </div>
 
                     {{-- Search --}}

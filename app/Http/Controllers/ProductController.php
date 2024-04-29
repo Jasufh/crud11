@@ -75,30 +75,35 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
+
+        $product = Product::findOrFail($id);
+
         $request->validate([
             'product_name' => 'required',
             'color' => 'required',
             'category_id' => 'required',
             'price' => 'required|numeric',
-            'img' => 'required|image|max:2048'
+            'img' => 'image|max:2048'
         ]);
 
-        //Eliminar imagen anterior almacenada
-        $product = Product::findOrFail($id);
-        $urlold = str_replace("storage/", "public/", $product->img);   
-        Storage::delete($urlold);
+        if ($request->hasFile('img')) {
+            //Eliminar imagen anterior almacenada
+            $url_old = str_replace("storage/", "public/", $product->img);
+            Storage::delete($url_old);
 
-        $imagenes = $request->file('img')->store('public/imagenes');
+            $imagenes = $request->file('img')->store('public/imagenes');
 
-        $url = Storage::url($imagenes);
-    
-        Product::where('id', $id)->update([
-            'product_name' => $request->product_name,
-            'color' => $request->color,
-            'category_id' => $request->category_id,
-            'price' => $request->price,
-            'img' => $url
-        ]);
+            $url = Storage::url($imagenes);
+
+            $product->img = $url;
+        }
+
+        $product->product_name = $request->product_name;
+        $product->color = $request->color;
+        $product->category_id = $request->category_id;
+        $product->price = $request->price;
+        $product->save();
+
 
         return redirect()->route('product.index');
     }
