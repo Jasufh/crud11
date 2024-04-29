@@ -4,7 +4,7 @@
             {{ __('Administrar productos') }}
         </h2>
     </x-slot>
-
+    
     {{-- Search --}}
     <div>
 

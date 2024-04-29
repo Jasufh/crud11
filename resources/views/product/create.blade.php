@@ -57,6 +57,8 @@
                             @enderror
                         </div>
 
+                         
+
                         <button type="submit" class="bg-green-600 rounded-xl px-2 py-1 text-white">Agregar</button>
                         <a href="{{ route('product.index') }}" class="bg-gray-500 rounded-xl px-2 py-1.5 text-white">Cancelar</a>
                     </form>
