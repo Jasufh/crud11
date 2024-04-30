@@ -3,6 +3,8 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Mail\TestMailable;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -28,6 +30,15 @@ Route::middleware('auth')->group(function () {
 
     Route::patch('/admin/product/{id}/update', [ProductController::class, 'update'])->name('product.update');
     Route::delete('/admin/product/{id}/destoy', [ProductController::class, 'destroy'])->name('product.destroy');
+
+    Route::get('testmail', function(){
+        
+        Mail::to('santi03956@gmail.com')
+            ->send(new TestMailable);
+
+            return "Mensaje enviado";
+
+    })->name('testmail');
     
 });
 
