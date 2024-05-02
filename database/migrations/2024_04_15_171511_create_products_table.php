@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('color');
             $table->float('price');
             $table->string('img');
+            $table->integer('cantidad_disponible');
             $table->timestamps(); 
 
             $table->foreign('category_id')->references('id')->on('categories');

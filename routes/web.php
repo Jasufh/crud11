@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Mail\TestMailable;
@@ -31,14 +32,20 @@ Route::middleware('auth')->group(function () {
     Route::patch('/admin/product/{id}/update', [ProductController::class, 'update'])->name('product.update');
     Route::delete('/admin/product/{id}/destoy', [ProductController::class, 'destroy'])->name('product.destroy');
 
-    Route::get('testmail', function(){
+
+    Route::get('/mi-carrito', [CartController::class, 'index'])->name('cart.index');
+    Route::post('/cart-store/{id}', [CartController::class, 'store'])->name('cart.store');
+
+
+
+    /* Route::get('testmail', function(){
         
         Mail::to('santi03956@gmail.com')
             ->send(new TestMailable);
 
             return "Mensaje enviado";
 
-    })->name('testmail');
+    })->name('testmail'); */
     
 });
 

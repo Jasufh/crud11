@@ -127,6 +127,7 @@
                                             <a href="{{ route('product.show', $product->id) }}">
                                                 <h1 class="text-2xl pe-3">...</h1>
                                             </a>
+                                            
                                         </td>
                                     </tr>
                                 @endforeach

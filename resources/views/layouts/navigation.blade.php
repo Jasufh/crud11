@@ -18,6 +18,11 @@
                     <x-nav-link :href="route('product.index')" :active="request()->routeIs('product.index')">
                         {{ __('Admin') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('cart.index')" :active="request()->routeIs('cart.index')">
+                        <i class="fa-solid fa-cart-shopping fa-lg" style="color: #63676e;"></i>
+                    </x-nav-link>
+
                 </div>
             </div>
 

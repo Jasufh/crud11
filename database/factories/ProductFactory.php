@@ -21,7 +21,9 @@ class ProductFactory extends Factory
             'category_id' => Category::all()->random()->id,
             'product_name' => fake()->word(),
             'color' => fake()->colorName(),
-            'price' => fake()->randomNumber()
+            'price' => fake()->randomNumber(),
+            'cantidad_disponible' => fake()->randomNumber(),
+            'img' => fake()->image(),
         ];
     }
 }

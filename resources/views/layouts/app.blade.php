@@ -40,5 +40,19 @@
     @include('sweetalert::alert')
     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/dddd00d336.js" crossorigin="anonymous"></script>
+
+    <script>
+        function incrementarCantidad() {
+            var input = document.getElementById('cantidad');
+            input.stepUp();
+        }
+
+        function decrementarCantidad() {
+            var input = document.getElementById('cantidad');
+            input.stepDown();
+        }
+    </script>
+    
 
 </html>
